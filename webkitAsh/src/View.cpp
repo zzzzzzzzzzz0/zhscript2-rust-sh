@@ -322,7 +322,7 @@ void cb_ready_to_show__ (WebKitWebView *web_view, View_* v) {
 static void cb_title__(WebKitWebView *webView, GParamSpec *pspec, View_* v) {
 	Notebook_* nb = (Notebook_*)v->var__("nb");
 	call__(v, nullptr, nullptr, {"标题", webkit_web_view_get_title(webView), nb->num__(v->hr__()) == nb->curr__() ? "1" : ""
-			/*, pspec->name*/, pspec->_blurb, pspec->_nick});
+			/*, pspec->name, pspec->_blurb, pspec->_nick*/});
 }
 
 static void cb_load_changed__(WebKitWebView  *web_view, WebKitLoadEvent load_event, View_* v) {
