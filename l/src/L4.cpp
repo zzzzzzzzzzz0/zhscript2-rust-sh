@@ -212,7 +212,11 @@ int L4_::load2__(const char* arg0) {
 			if(err == 250) {
 				src = eval__("‘参数0【顶】’");
 				if(src.empty()) {
-					src += arg0;
+					src = arg0;
+					src += ".zhscript";
+					if(exists__(src))
+						continue;
+					src = arg0;
 					src += ".zs";
 					if(exists__(src))
 						continue;
